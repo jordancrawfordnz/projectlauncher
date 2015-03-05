@@ -9,7 +9,8 @@ public class ProjectLauncher {
 		projects = new ArrayList<Project>();
 		// parse
 		
-		Project firstProject = new Project("dash", "~/Projects/dash-web");
+		Project firstProject = new Project("dash", "/Users/Jordan/Projects/dash-web");
+		// path must be defined relative to the entire system!
 		projects.add(firstProject);
 	}
 	

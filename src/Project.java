@@ -16,10 +16,13 @@ public class Project {
 		}
 		this.name = name;
 		this.path = path;
-	}
+	}	
 	
 	public boolean Launch()
 	{
+		new Finder(path).Launch();
+		new SourceTree(path).Launch();
+		new SublimeText(path).Launch();
 		
 		System.out.println("launched successfully");
 		return true;
