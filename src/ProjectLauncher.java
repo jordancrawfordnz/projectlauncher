@@ -52,10 +52,12 @@ public class ProjectLauncher {
 				{
 					if(currentProject.Launch())
 					{
+						System.out.println("Cool. Enjoy!");
 						System.exit(0);
 					}
 					else
 					{
+						System.err.println("Sorry. Something bad happened, am I missing required classes? You may want to check your project configuration.");
 						System.exit(1);
 					}
 				}
