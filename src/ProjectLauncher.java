@@ -9,7 +9,9 @@ public class ProjectLauncher {
 		projects = new ArrayList<Project>();
 		// parse
 		
-		Project firstProject = new Project("dash", "/Users/Jordan/Projects/dash-web");
+		String[] toLaunch = {"SourceTree", "SublimeText", "Finder"};
+		
+		Project firstProject = new Project("dash", "/Users/Jordan/Projects/dash-web", toLaunch);
 		// path must be defined relative to the entire system!
 		projects.add(firstProject);
 	}

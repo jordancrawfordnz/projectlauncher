@@ -5,8 +5,9 @@ import java.lang.reflect.*;
 public class Project {
 	
 	String name, path;
+	String[] toLaunch;
 	
-	public Project(String name, String path)
+	public Project(String name, String path, String[] toLaunch)
 	{
 		if(name == null)
 		{
@@ -18,14 +19,26 @@ public class Project {
 		}
 		this.name = name;
 		this.path = path;
+		this.toLaunch = toLaunch;
 	}	
 	
 	public boolean Launch()
 	{
-		getInstanceOfLaunchable("Finder").Launch();
-		getInstanceOfLaunchable("SourceTree").Launch();
-		getInstanceOfLaunchable("SublimeText").Launch();
-
+		for(String currentLaunchable : toLaunch)
+		{
+			Launchable launchable = getInstanceOfLaunchable(currentLaunchable);
+			if(launchable == null)
+			{
+				return false;
+			}
+			else
+			{
+				if(!launchable.Launch())
+				{
+					return false;
+				}
+			}
+		}
 		return true;
 	}
 	
