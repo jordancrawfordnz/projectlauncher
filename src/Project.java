@@ -1,4 +1,6 @@
+import java.io.IOException;
 import java.lang.Throwable.*;
+import java.lang.reflect.*;
 
 public class Project {
 	
@@ -20,21 +22,60 @@ public class Project {
 	
 	public boolean Launch()
 	{
-		new Finder(path).Launch();
-		new SourceTree(path).Launch();
-		new SublimeText(path).Launch();
-		
-		System.out.println("launched successfully");
+		getInstanceOfLaunchable("Finder").Launch();
+		getInstanceOfLaunchable("SourceTree").Launch();
+		getInstanceOfLaunchable("SublimeText").Launch();
+
 		return true;
 	}
 	
+	Launchable getInstanceOfLaunchable(String name)
+	{
+		try
+		{
+			Class<?> launcherClass;
+			launcherClass = Class.forName(name);
+			
+			if (launcherClass == null)
+				return null;
+						
+			Constructor<?> constructHandler = launcherClass.getDeclaredConstructor(Project.class);
+			return (Launchable) constructHandler.newInstance(this);
+		}
+		catch (InstantiationException e)
+		{
+			return null;
+		}
+		catch (NoSuchMethodException e)
+		{
+			return null;
+		}
+		catch (IllegalAccessException e)
+		{
+			return null;
+		}
+		catch (InvocationTargetException e)
+		{
+			return null;
+		}
+		catch(ClassNotFoundException e)
+		{
+			return null;
+		}
+	}
+		
 	@Override public String toString()
 	{
 		return this.name + ", path: \"" + this.path + "\"";
 	}
 	
+	public String getPath()
+	{
+		return path;
+	}
+	
 	public String getName()
 	{
-		return this.name;
+		return name;
 	}
 }

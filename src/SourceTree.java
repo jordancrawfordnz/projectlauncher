@@ -3,16 +3,16 @@ import java.io.IOException;
 
 public class SourceTree implements Launchable{
 
-	String path;
-	public SourceTree(String path)
+	Project project;
+	public SourceTree(Project project)
 	{
-		this.path = path;
+		this.project = project;
 	}
 	
 	@Override
 	public boolean Launch() {
 		try {
-			Runtime.getRuntime().exec("stree " + path);
+			Runtime.getRuntime().exec("stree " + project.getPath());
 			return true;
 		} catch (IOException e) {
 			return false;

@@ -1,23 +1,22 @@
 import java.io.IOException;
 
 
-public class SublimeText implements Launchable {
+public class SublimeText implements Launchable{
 
-	String path;
-	public SublimeText(String path)
+	Project project;
+	public SublimeText(Project project)
 	{
-		this.path = path;
+		this.project = project;
 	}
 	
 	@Override
 	public boolean Launch() {
 		try {
-			Runtime.getRuntime().exec("subl " + path);
+			Runtime.getRuntime().exec("subl " + project.getPath());
 			return true;
 		} catch (IOException e) {
 			return false;
 		}
 	}
-	
 
 }
