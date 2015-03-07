@@ -1,13 +1,14 @@
 package ord.nz.jordancrawf.projects.ProjectLauncher;
 
 import java.lang.reflect.*;
+import java.util.List;
 
 public class Project {
 	
 	String name, path;
-	String[] toLaunch;
+	List<String> toLaunch;
 	
-	public Project(String name, String path, String[] toLaunch)
+	public Project(String name, String path, List<String> toLaunch)
 	{
 		if(name == null)
 		{

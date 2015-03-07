@@ -5,10 +5,9 @@
   <groupId>ord.nz.jordancrawf.projects</groupId>
   <artifactId>ProjectLauncher</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
 
   <name>ProjectLauncher</name>
-  <url>http://maven.apache.org</url>
+  <url>https://bitbucket.org/jordancrawfordnz/projectlauncher</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,5 +20,14 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+    	<groupId>com.googlecode.json-simple</groupId>
+    	<artifactId>json-simple</artifactId>
+    	<version>1.1.1</version>
+    </dependency>
   </dependencies>
+  <organization>
+  	<name>Jordan Crawford</name>
+  	<url>http://jordancrawf.ord.nz</url>
+  </organization>
 </project>
