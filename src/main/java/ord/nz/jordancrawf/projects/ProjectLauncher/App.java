@@ -19,11 +19,12 @@ public class App
 		}
 		if(args.length == 1)
 		{
+			boolean projectExists = false;
 			for(Project currentProject : ProjectLauncher.getInstance().getProjects())
 			{
-			
 				if(currentProject.getName().equals(args[0]))
 				{
+					projectExists = true;
 					if(currentProject.Launch())
 					{
 						System.out.println("Cool. Enjoy!");
@@ -34,11 +35,12 @@ public class App
 						System.err.println("Sorry. Something bad happened, am I missing required classes? You may want to check your project configuration.");
 						System.exit(1);
 					}
+					break;
 				}
-				else
-				{
-					System.err.println("Darn! \"" + args[0] + "\" isn't a project I know about. Use 'project' to list all projects I know :)");
-				}
+			}
+			if(!projectExists)
+			{
+				System.err.println("Darn! \"" + args[0] + "\" isn't a project I know about. Use 'project' to list all projects I know :)");
 			}
 			// check project, setup project
 			return;
