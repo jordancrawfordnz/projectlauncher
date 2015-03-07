@@ -18,7 +18,7 @@ public class ProjectLauncher {
 	{
 		// parse
 		String homeDir = System.getProperty("user.home"); // this may not work on Windows
-		String fileDir = homeDir + "/.projectswitcher.json";
+		String fileDir = homeDir + "/.projectlauncher.json";
 		
 		try {
 			Object obj = new JSONParser().parse(new FileReader(fileDir));
