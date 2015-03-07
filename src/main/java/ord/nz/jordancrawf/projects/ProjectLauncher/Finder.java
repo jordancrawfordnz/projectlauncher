@@ -1,5 +1,6 @@
-import java.io.IOException;
+package ord.nz.jordancrawf.projects.ProjectLauncher;
 
+import java.io.IOException;
 
 public class Finder implements Launchable{
 
@@ -9,7 +10,6 @@ public class Finder implements Launchable{
 		this.project = project;
 	}
 	
-	@Override
 	public boolean Launch() {
 		try {
 			Runtime.getRuntime().exec("open " + project.getPath());
