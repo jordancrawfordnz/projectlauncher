@@ -12,7 +12,7 @@ public class SublimeText implements Launchable{
 	
 	public boolean Launch() {
 		try {
-			Runtime.getRuntime().exec("subl " + project.getPath());
+			Runtime.getRuntime().exec("/usr/local/bin/subl " + project.getPath());
 			return true;
 		} catch (IOException e) {
 			return false;

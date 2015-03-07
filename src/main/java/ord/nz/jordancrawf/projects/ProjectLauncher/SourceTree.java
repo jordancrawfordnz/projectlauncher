@@ -12,7 +12,7 @@ public class SourceTree implements Launchable{
 	
 	public boolean Launch() {
 		try {
-			Runtime.getRuntime().exec("stree " + project.getPath());
+			Runtime.getRuntime().exec("/usr/local/bin/stree " + project.getPath());
 			return true;
 		} catch (IOException e) {
 			return false;
