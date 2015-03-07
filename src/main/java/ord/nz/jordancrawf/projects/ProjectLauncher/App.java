@@ -9,42 +9,52 @@ public class App
 
 	public static void main(String args[])
 	{
-		if(args.length == 0)
+		if(args.length == 0 || args.length == 1)
 		{
-			for(Project currentProject : ProjectLauncher.getInstance().getProjects())
+			if(!ProjectLauncher.getInstance().loadProjects())
 			{
-				System.out.println(" - " + currentProject);
+				System.exit(2);
 			}
-			return;
-		}
-		if(args.length == 1)
-		{
-			boolean projectExists = false;
-			for(Project currentProject : ProjectLauncher.getInstance().getProjects())
+			if(args.length == 0)
 			{
-				if(currentProject.getName().equals(args[0]))
+				for(Project currentProject : ProjectLauncher.getInstance().getProjects())
 				{
-					projectExists = true;
-					if(currentProject.Launch())
-					{
-						System.out.println("Cool. Enjoy!");
-						System.exit(0);
-					}
-					else
-					{
-						System.err.println("Sorry. Something bad happened, am I missing required classes? You may want to check your project configuration.");
-						System.exit(1);
-					}
-					break;
+					System.out.println(" - " + currentProject);
 				}
+				return;
 			}
-			if(!projectExists)
+			if(args.length == 1)
 			{
-				System.err.println("Darn! \"" + args[0] + "\" isn't a project I know about. Use 'project' to list all projects I know :)");
+				boolean projectExists = false;
+				for(Project currentProject : ProjectLauncher.getInstance().getProjects())
+				{
+					if(currentProject.getName().equals(args[0]))
+					{
+						projectExists = true;
+						if(currentProject.Launch())
+						{
+							System.out.println("Cool. Enjoy!");
+							System.exit(0);
+						}
+						else
+						{
+							System.err.println("Sorry. Something bad happened, am I missing required classes? You may want to check your project configuration.");
+							System.exit(1);
+						}
+						break;
+					}
+				}
+				if(!projectExists)
+				{
+					System.err.println("Darn! \"" + args[0] + "\" isn't a project I know about. Use 'project' to list all projects I know :)");
+				}
+				// check project, setup project
+				return;
 			}
-			// check project, setup project
-			return;
 		}
-		System.err.print("Invalid argument provided! Use: 'project' to list. or 'project [project_name]' to launch a project. Have a great day.");
+		else
+		{
+			System.err.print("Invalid argument provided! Use: 'project' to list. or 'project [project_name]' to launch a project. Have a great day.");	
+		}
 	}	
 }
