@@ -100,3 +100,7 @@ The ``$@`` you see here is so any additional parameters to ``project`` are sent 
 		
 - We need to be able to execute that command. Do ``chmod +x project``
 - Now change directory to somewhere else and try the ``project`` command. If all goes well, you should get a listing of your projects!
+
+##TODO:##
+- make it easier to setup and setup new launchables
+- cool things like auto-prediction of project as you type, and maybe some way too only open something if the project isn't already open in that program (not sure how to do this though...?)
