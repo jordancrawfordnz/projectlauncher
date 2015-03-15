@@ -1,6 +1,6 @@
 #About#
 
-![preview of operation](https://bytebucket.org/jordancrawfordnz/projectlauncher/raw/eb43cb5de0b8a7709959b56de61093a8e1af920c/images/preview.gif)
+![preview of operation](https://bytebucket.org/jordancrawfordnz/projectlauncher/raw/8ae20985e17e1cef200c2e47ebef95e41fd8f989/images/preview.gif)
 
 ##What does it do?##
 If your switching between projects often there are a lot of different things to open. In my case, this was the projects directory in Sublime Text, SourceTree and Finder. I wanted a command line tool to just launch a project quickly.
