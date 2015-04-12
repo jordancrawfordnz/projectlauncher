@@ -7,6 +7,14 @@ package ord.nz.jordancrawf.projects.ProjectLauncher;
 public class App 
 {
 
+	public static void outputProjectList()
+	{
+		for(Project currentProject : ProjectLauncher.getInstance().getProjects())
+		{
+			System.out.println(" - " + currentProject);
+		}
+	}
+	
 	public static void main(String args[])
 	{
 		if(args.length == 0 || args.length == 1)
@@ -17,10 +25,7 @@ public class App
 			}
 			if(args.length == 0)
 			{
-				for(Project currentProject : ProjectLauncher.getInstance().getProjects())
-				{
-					System.out.println(" - " + currentProject);
-				}
+				outputProjectList();
 				return;
 			}
 			if(args.length == 1)
@@ -46,7 +51,8 @@ public class App
 				}
 				if(!projectExists)
 				{
-					System.err.println("Darn! \"" + args[0] + "\" isn't a project I know about. Use 'project' to list all projects I know :)");
+					System.out.println("Darn! \"" + args[0] + "\" isn't a project I know about. These are the ones I do know:");
+					outputProjectList();
 				}
 				// check project, setup project
 				return;
