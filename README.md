@@ -1,4 +1,4 @@
-# About
+# ProjectLauncher
 ![preview of operation](/images/preview.gif?raw=true)
 
 ## What does it do?
