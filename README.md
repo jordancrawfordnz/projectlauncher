@@ -1,6 +1,5 @@
 # About
-
-![preview of operation](https://bytebucket.org/jordancrawfordnz/projectlauncher/raw/8ae20985e17e1cef200c2e47ebef95e41fd8f989/images/preview.gif)
+![preview of operation](projectlauncher/images/preview.gif?raw=true)
 
 ## What does it do?
 If your switching between projects often there are a lot of different things to open. In my case, this was the projects directory in Sublime Text, SourceTree and Finder. I wanted a command line tool to just launch a project quickly.
@@ -74,12 +73,12 @@ I didn't have any luck with getting ```mvn``` to automatically creat the jar fil
 - Java/Runnable JAR File
 
 
-![choose runnable JAR](https://bytebucket.org/jordancrawfordnz/projectlauncher/raw/970cb4fea46547ac8fd542094c57b4befd568252/images/making_jar_1.jpg)
+![choose runnable JAR](projectlauncher/images/making_jar_1.jpg?raw=true)
 
 - Library handling should just be "Package required libraries into generated JAR"
 
 
-![find location and finish](https://bytebucket.org/jordancrawfordnz/projectlauncher/raw/970cb4fea46547ac8fd542094c57b4befd568252/images/making_jar_2.jpg)
+![find location and finish](projectlauncher/images/making_jar_2.jpg?raw=true)
 
 - Finish
 
@@ -92,12 +91,12 @@ We want to be able to run ```project``` in Terminal from any directory, so:
 - ``nano project`` (or your favorite text editor)
 
 
-![change into local bin and open nano](https://bytebucket.org/jordancrawfordnz/projectlauncher/raw/970cb4fea46547ac8fd542094c57b4befd568252/images/setting_up_1.jpg)
+![change into local bin and open nano](projectlauncher/images/setting_up_1.jpg?raw=true)
 
 - type: ``java -jar [location of ProjectLauncher.jar] $@``,  in my case: ``java -jar /Applications/ProjectLauncher.jar $@``
 
 
-![add the required command to project](https://bytebucket.org/jordancrawfordnz/projectlauncher/raw/970cb4fea46547ac8fd542094c57b4befd568252/images/setting_up_2.jpg)
+![add the required command to project](projectlauncher/images/setting_up_2.jpg?raw=true)
 
 The ``$@`` you see here is so any additional parameters to ``project`` are sent through to the actual JAR file.
 		
